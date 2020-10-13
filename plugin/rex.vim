@@ -14,8 +14,7 @@ endfunction
 function! rex#rex() abort
     let s:cmd=input("command: ")
     let s:res=system(s:cmd, s:get_visual_selection())
-    :d
-    execute ":put =s:res"
+    execute "normal gvx"
+    execute "normal! i\<C-r>\<C-r>=s:res\<CR>\<Esc>"
 endfunction
-
 
